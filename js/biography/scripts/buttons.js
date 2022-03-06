@@ -352,7 +352,16 @@
 		this.scr.init = false;
 		this.checkScrollBtns(x, y, hover_btn);
 		if (hover_btn) hand = hover_btn.hand;
-		if (!resize.down) window.SetCursor(!hand && !seeker.hand && !filmStrip.hand ? 32512 : 32649);
+		if (!resize.down) {
+			if(!hand && seeker.hand) {
+				window.SetCursor(32512);
+				this.hand = false;
+			} else if(hover_btn){
+				window.SetCursor(32649);
+				this.hand = true;
+			}
+		}
+		//if (!resize.down) window.SetCursor(!hand && !seeker.hand && !filmStrip.hand ? 32512 : 32649);
 		if (hover_btn && hover_btn.hide) {
 			if (this.cur) {
 				this.cur.cs('normal');

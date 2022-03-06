@@ -1,8 +1,4 @@
-const MF_GRAYED = 0x00000001;
-const MF_SEPARATOR = 0x00000800;
-const MF_STRING = 0x00000000;
-
-class MenuManager {
+﻿class MenuManager {
 	constructor(baseMenu) {
 		this.baseMenu = baseMenu || 'baseMenu';
 		this.func = {};
